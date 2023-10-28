@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Zeyada&display=swap");
+
 body {
   height: 100vh;
   display: flex;
@@ -7,35 +8,44 @@ body {
   background-size: 1000px;
   background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
   background-position: center center;
+  margin: 0; /* Remove default margin */
 }
+
 .paper {
   background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
   background-size: 500px;
   background-position: center center;
-  padding: 20px 100px;
-  //min-width: 800px;
+  padding: 5vw; /* Responsive padding using viewport width (vw) units */
   transform: rotateZ(-5deg);
-  box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 5vw 10vw 0px rgba(0, 0, 0, 0.5); /* Responsive box shadow */
   position: absolute;
+  width: 90%; /* Responsive width */
+  max-width: 500px; /* Limit the maximum width for larger screens */
+  border-radius: 2vw; /* Responsive border radius */
 }
+
 .paper.heart {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 35vw; /* Responsive width using vw units */
+  height: 35vw; /* Responsive height using vw units */
   padding: 0;
   border-radius: 50%;
 }
+
 .paper.image {
-  padding: 10px;
+  padding: 2vw; /* Responsive padding using vw units */
 }
+
 .paper.image p {
-  font-size: 30px;
+  font-size: 5vw; /* Responsive font size using vw units */
 }
+
 img {
-  max-height: 200px;
+  max-height: 35vw; /* Responsive maximum height using vw units */
   width: 100%;
   user-select: none;
 }
+
 .paper.heart::after {
   content: "";
   background-image: url("https://cdn.pixabay.com/photo/2016/03/31/19/25/cartoon-1294994__340.png");
@@ -44,25 +54,19 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-  background-size: 150px;
+  background-size: 15vw; /* Responsive background size */
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0.6;
 }
+
 .paper.red {
-  /*   filter: hue-rotate(90deg); */
+  /* Add any additional styles for red paper */
 }
-.paper:nth-of-type(3n) {
-  background-position: left top;
-}
-.paper:nth-of-type(3n) {
-  /*   filter: hue-rotate(200deg); */
-}
-p {
-  font-family: "Zeyada";
-  font-size: 50px;
-  color: rgb(0, 0, 100);
-  opacity: 0.75;
-  user-select: none;
-  // filter: drop-shadow(2px 1.5px 1px rgba(0,0,105,0.9));
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .paper {
+    transform: rotateZ(0); /* Reset rotation for smaller screens */
+  }
 }
